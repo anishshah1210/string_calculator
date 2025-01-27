@@ -12,5 +12,9 @@ RSpec.describe StringAddCalculator, type: :model do
       expect(calc.add('3')).to eq(3)
     end
 
+    it 'sum  numbers' do
+      calc  = StringAddCalculator.new
+      expect(calc.add('1 3 8')).to eq(3)
+    end 
   end
 end
