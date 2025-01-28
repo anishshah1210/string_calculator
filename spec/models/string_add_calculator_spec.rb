@@ -23,7 +23,7 @@ RSpec.describe StringAddCalculator, type: :model do
     end
     
     it "return sum when custom delimiter in string" do
-      calc = StringCalculator.new
+      calc = StringAddCalculator.new
       expect(calc.add("//;\n1;2")).to eq(3)
     end
     
