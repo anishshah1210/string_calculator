@@ -42,6 +42,11 @@ RSpec.describe StringAddCalculator, type: :model do
       expect(calc.add("//[***]\n1***2***3")).to eq(6)
       expect(calc.add("//[;;]\n1;;2;;3")).to eq(6)
     end
+
+    it "different kind of deliminator in string" do
+      calc = StringAddCalculator.new
+      expect(calc.add("//[*][%]\n1*2%3")).to eq(6)
+    end
     
   end
 end
