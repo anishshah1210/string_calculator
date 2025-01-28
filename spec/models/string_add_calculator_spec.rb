@@ -15,6 +15,12 @@ RSpec.describe StringAddCalculator, type: :model do
     it 'sum  numbers' do
       calc  = StringAddCalculator.new
       expect(calc.add('1,3,8')).to eq(12)
-    end 
+    end
+
+    it "return sum when a new line character string" do
+      calc = StringAddCalculator.new
+      expect(calc.add("1\n2,3")).to eq(6)
+    end
+
   end
 end
