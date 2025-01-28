@@ -12,7 +12,18 @@ class StringAddCalculator
     delimiter_pattern = "[#{delimiters.join}]+"
     
     numbers = numbers.split(Regexp.new(delimiter_pattern))
-  p numbers
+
+    # nagative
+    p "ff"
+    p numbers
+    p "hh"
+    negative_numbers = numbers.select { |num| num.to_i < 0 }
+    if negative_numbers.any?
+      raise "Negative numbers not allowed: #{negative_numbers.join(', ')}"
+    end
+    numbers  = numbers.select { |num| num.to_i < 1001 }
+
+    
     return numbers.map(&:to_i).sum
   end
 end

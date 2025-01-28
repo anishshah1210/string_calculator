@@ -26,6 +26,16 @@ RSpec.describe StringAddCalculator, type: :model do
       calc = StringAddCalculator.new
       expect(calc.add("//;\n1;2")).to eq(3)
     end
+
+    it "raise exemption when pass negative number(s)" do
+      calc = StringAddCalculator.new
+      expect { calc.add("1,-2,-3") }.to raise_error("Negative numbers not allowed: -2, -3")
+    end
+
+    it "ignore number when it is greater than 1000" do
+      calc = StringAddCalculator.new
+      expect(calc.add("1001,5")).to eq(5)
+    end
     
   end
 end
