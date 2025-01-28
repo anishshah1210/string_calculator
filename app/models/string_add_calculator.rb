@@ -5,8 +5,6 @@ class StringAddCalculator
     if numbers.start_with?("//[")
       delimiters = numbers.scan(/\[(.*?)\]/).flatten
       numbers = numbers.split("\n", 2)[1]
-      p numbers
-      p "------------"
     elsif numbers.start_with?('//')
       delimiters = [numbers[2]]
       numbers = numbers.split("\n", 2)[1]
