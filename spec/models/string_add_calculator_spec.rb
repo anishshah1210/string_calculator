@@ -36,6 +36,12 @@ RSpec.describe StringAddCalculator, type: :model do
       calc = StringAddCalculator.new
       expect(calc.add("1001,5")).to eq(5)
     end
+
+    it 'supports custom delimiter of any length' do
+      calc = StringAddCalculator.new      
+      expect(calc.add("//[***]\n1***2***3")).to eq(6)
+      expect(calc.add("//[;;]\n1;;2;;3")).to eq(6)
+    end
     
   end
 end
